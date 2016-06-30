@@ -269,9 +269,7 @@ public class GridActivity extends AppCompatActivity {
                         break;
                     case 1:
                         sync();
-                        /*LoginManager.ge*nstance().logOut();
-                        Intent dialogIntent = new Intent(MainActivity.this , AuthActivity.class);
-                        startActivity(dialogIntent);*/
+
 
 
 

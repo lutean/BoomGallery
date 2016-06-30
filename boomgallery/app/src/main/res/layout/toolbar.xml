@@ -29,7 +29,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:foregroundGravity="center"
-            android:text="Title"
+            android:text="Gallery"
             android:textColor="#ffffff"
             android:textSize="20sp"
             android:layout_alignParentBottom="true"
