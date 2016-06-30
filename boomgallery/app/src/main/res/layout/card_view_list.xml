@@ -26,7 +26,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="13sp"
-            android:text="@string/country_name"
             android:textColor="#000000"
             android:gravity="center"
             android:layout_below="@+id/country_photo"

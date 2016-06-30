@@ -4,5 +4,6 @@
         <string name="action_refresh">Settings</string>
         <string name="action_new">Settings</string>
         <string name="logo_desc">App logo</string>
-        <string name="country_name">Nigeria</string>
+
+    <integer name="com_vk_sdk_AppId">5529395</integer>
 </resources>

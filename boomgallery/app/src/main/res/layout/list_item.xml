@@ -32,6 +32,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Medium Text"
+                android:visibility="invisible"
                 android:id="@+id/textViewRecItm"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true" />
