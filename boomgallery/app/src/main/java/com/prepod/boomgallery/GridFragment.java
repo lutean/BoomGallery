@@ -6,27 +6,22 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Антон on 30.06.2016.
- */
 public class GridFragment extends Fragment{
 
     private GridLayoutManager lLayout;
     RecyclerView rView;
-    private Cursor cursor;
     private ArrayList<String> mImages = new ArrayList<>();
+    private ArrayList<Integer> imagesIds = new ArrayList<>();
 
 
     public GridFragment() {
@@ -59,7 +54,7 @@ public class GridFragment extends Fragment{
                         Intent intent = new Intent(getActivity(), FullScreen.class);
 
                         //intent.putStringArrayListExtra("images", mImages);
-                        intent.putExtra("image",rowListItem.get(position).getPhoto());
+                        intent.putExtra("image",rowListItem.get(position).getImage());
 
                         startActivity(intent);
                     }
@@ -72,28 +67,55 @@ public class GridFragment extends Fragment{
 
     private List<ItemObject> getAllItemList(){
 
+         final Uri thumbUri = MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI;
+         final Uri sourceUri = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+
         List<ItemObject> allItems = new ArrayList<ItemObject>();
         // allItems.add(new ItemObject("United States", R.mipmap.ic_launcher));
 
         String[] list = {MediaStore.Images.Media._ID, MediaStore.Images.Media.DATA};
+        String[] listThumb = {MediaStore.Images.Thumbnails._ID, MediaStore.Images.Thumbnails.DATA};
 
-        //Retriving Images from Database(SD CARD) by Cursor.
-        cursor = getActivity().getContentResolver().query(MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI, list, null, null, MediaStore.Images.Thumbnails._ID);
-        //columnIndex = cursor.getColumnIndexOrThrow(MediaStore.Images.Thumbnails._ID);
+        Cursor cursor = getActivity().getContentResolver().query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, list, null, null, MediaStore.Images.Media._ID);
+        Cursor cursorThumb = MediaStore.Images.Thumbnails.queryMiniThumbnails(getActivity().getContentResolver(),
+                MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI,
+                MediaStore.Images.Thumbnails.MINI_KIND,
+                listThumb);
 
-        if (cursor != null) {
-            while (cursor.moveToNext()) {
+        if (cursorThumb != null) {
+            while (cursorThumb.moveToNext()) {
 
-
-                String hz = cursor.getString(1);
-
-                mImages.add(hz);
-                Uri imageUri = Uri.parse(hz);
-
-                allItems.add(new ItemObject("!!!", imageUri));
+                String image = cursorThumb.getString(1);
+                mImages.add(image);
+                Uri imageUri = Uri.parse(image);
+                allItems.add(new ItemObject("", imageUri));
             }
         }
 
+
+                //columnIndex = cursor.getColumnIndexOrThrow(MediaStore.Images.Thumbnails._ID);
+
+       /* if (cursor != null) {
+            while (cursor.moveToNext()) {
+                int imageId = cursor.getInt(0);
+                //Bitmap bm =  MediaStore.Images.Thumbnails.getThumbnail(getActivity().getContentResolver(), hz0, MediaStore.Images.Thumbnails.MINI_KIND, null);
+                String image = cursor.getString(1);
+                mImages.add(image);
+                Uri imageUri = Uri.parse(image);
+                allItems.add(new ItemObject("", imageId , imageUri));
+            }
+        }*/
+     /*   cursor.moveToFirst();
+        for (int i=0; i < 10; i++) {
+            cursor.move(i);
+            String hz = cursor.getString(1);
+
+            mImages.add(hz);
+            Uri imageUri = Uri.parse(hz);
+
+            allItems.add(new ItemObject("!!!", imageUri));
+        }
+*/
 
         return allItems;
     }

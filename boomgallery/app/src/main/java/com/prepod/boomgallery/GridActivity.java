@@ -50,6 +50,7 @@ import com.vk.sdk.api.photo.VKUploadImage;
 
 import org.json.JSONArray;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -82,6 +83,7 @@ public class GridActivity extends AppCompatActivity {
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         ava = (AvaView) findViewById(R.id.drawer_pic);
+        ava.setImageResource(R.drawable.log);
         nameMe = (TextView) findViewById(R.id.name);
 
         imageLoader = BoomGallery.getInstance().getImageLoader();
@@ -96,10 +98,6 @@ public class GridActivity extends AppCompatActivity {
 
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
         mDrawerTitles = new String[]{"Gallery"};
-
-
-
-
 
         showGrid();
         //topToolBar.setLogo(R.drawable.logo);
@@ -176,8 +174,8 @@ public class GridActivity extends AppCompatActivity {
 
     private void sync(){
         List<String> allItems = new ArrayList<>();
-        String[] list = {MediaStore.Images.Thumbnails._ID, MediaStore.Images.Thumbnails.DATA};
-        Cursor cursor = getContentResolver().query(MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI, list, null, null, MediaStore.Images.Thumbnails._ID);
+        String[] list = {MediaStore.Images.Media._ID, MediaStore.Images.Media.DATA};
+        Cursor cursor = getContentResolver().query(MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI, list, null, null, MediaStore.Images.Media._ID);
         if (cursor != null) {
             while (cursor.moveToNext()) {
                 String hz = cursor.getString(1);
@@ -197,7 +195,7 @@ public class GridActivity extends AppCompatActivity {
             }*/
 
             Bitmap photo = BitmapFactory.decodeFile(allItems.get(i));
-            VKRequest request = VKApi.uploadAlbumPhotoRequest(new VKUploadImage(photo, VKImageParameters.pngImage()), 233415735, 0);
+            VKRequest request = VKApi.uploadAlbumPhotoRequest(new VKUploadImage(photo, VKImageParameters.pngImage()), Consts.ALBUM_ID, 0);
             request.executeWithListener(new VKRequest.VKRequestListener() {
                 @Override
                 public void onComplete(VKResponse response) {
@@ -232,6 +230,7 @@ public class GridActivity extends AppCompatActivity {
     }
 
 
+
     @Override
     protected void onResume() {
         super.onResume();
@@ -245,6 +244,7 @@ public class GridActivity extends AppCompatActivity {
             dataList.add(new DrawerItem("Sync", R.drawable.sync));
         }else{
             dataList.add(new DrawerItem("Login", R.drawable.vk));
+
         }
 
         adapter = new CustomDrawerAdapter(this, R.layout.drawer_item,

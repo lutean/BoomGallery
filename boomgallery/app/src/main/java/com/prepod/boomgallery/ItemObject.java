@@ -3,31 +3,38 @@ package com.prepod.boomgallery;
 
 import android.net.Uri;
 
-import java.net.URI;
-
 public class ItemObject {
 
-    private String name;
-    private Uri photo;
+    private String imageName;
+    private Uri image;
+    private int imageId;
 
-    public ItemObject(String name, Uri photo) {
-        this.name = name;
-        this.photo = photo;
+    public ItemObject(String imageName, Uri image) {
+        this.imageName = imageName;
+        this.image = image;
     }
 
-    public String getName() {
-        return name;
+    public String getImageName() {
+        return imageName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
     }
 
-    public Uri getPhoto() {
-        return photo;
+    public Uri getImage() {
+        return image;
     }
 
-    public void setPhoto(Uri photo) {
-        this.photo = photo;
+    public void setImage(Uri image) {
+        this.image = image;
+    }
+
+    public void setImageId(int imageId) {
+        this.imageId = imageId;
+    }
+
+    public int getImageId() {
+        return imageId;
     }
 }
