@@ -1,7 +1,6 @@
 package com.prepod.boomgallery;
 
 import android.content.Context;
-import android.provider.MediaStore;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,10 +13,11 @@ import java.util.List;
  */
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolders> {
 
-    private List<ItemObject> itemList;
+    private List<ItemImage> itemList;
     private Context context;
+    private final LoadImage loadImage = new LoadImage();
 
-    public RecyclerViewAdapter(Context context, List<ItemObject> itemList) {
+    public RecyclerViewAdapter(Context context, List<ItemImage> itemList) {
         this.itemList = itemList;
         this.context = context;
     }
@@ -33,7 +33,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewHolder
     @Override
     public void onBindViewHolder(RecyclerViewHolders holder, int position) {
         holder.textViewRecItm.setText(itemList.get(position).getImageName());
-        holder.cardImage.setImageURI(itemList.get(position).getImage());
+        holder.cardImage.setImageURI(itemList.get(position).getThumbImageUri());
     }
 
     @Override
