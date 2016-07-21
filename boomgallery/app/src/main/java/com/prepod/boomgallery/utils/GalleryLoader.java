@@ -1,24 +1,28 @@
 package com.prepod.boomgallery.utils;
 
+import android.app.Activity;
 import android.content.Context;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.AsyncTaskLoader;
 
-import com.prepod.boomgallery.ItemImage;
+import com.prepod.boomgallery.adapters.ItemImage;
 
 import java.util.List;
 
 public class GalleryLoader extends AsyncTaskLoader<List<ItemImage>>{
 
     private List<ItemImage> images;
+    private Activity parentActivity;
 
-    public GalleryLoader(Context context){
-        super(context);
+    public GalleryLoader(Activity parentActivity){
+        super(parentActivity);
+        this.parentActivity = parentActivity;
     }
 
     @Override
     public List<ItemImage> loadInBackground() {
         Context context = getContext();
-        List<ItemImage> imageList = ImageLoadHelper.getImages(context);
+        List<ItemImage> imageList = ImageLoadHelper.getImages(parentActivity);
         return imageList;
     }
 

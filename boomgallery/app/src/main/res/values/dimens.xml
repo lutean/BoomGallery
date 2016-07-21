@@ -23,5 +23,11 @@
     <dimen name="feed_image_h">250dp</dimen>
 
     <dimen name="logo_hw">50dp</dimen>
+    <dimen name="activity_pager_bottom_toolbar_height">50dp</dimen>
+    <dimen name="activity_pager_bottom_toolbar_margin">5dp</dimen>
+    <dimen name="activity_pager_bottom_toolbar_icon_size">25dp</dimen>
+    <dimen name="activity_pager_bottom_toolbar_text_size">8sp</dimen>
+
+    <dimen name="card_view_height">115dp</dimen>
 
 </resources>

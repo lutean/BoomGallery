@@ -7,7 +7,11 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
+import com.prepod.boomgallery.adapters.ItemImage;
 import com.vk.sdk.VKSdk;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Антон on 30.06.2016.
@@ -21,6 +25,7 @@ public class BoomGallery extends Application {
     private RequestQueue mRequestQueue;
     private ImageLoader mImageLoader;
     LruBitmapCache mLruBitmapCache;
+    public static List<ItemImage> imageList = new ArrayList<>();
 
     @Override
     public void onCreate() {
@@ -72,6 +77,5 @@ public class BoomGallery extends Application {
 
         return mRequestQueue;
     }
-
 
 }
