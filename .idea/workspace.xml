@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70ae7739-b4b1-49ad-8b64-238968b7c90e" name="Default" comment="" />
+    <list default="true" id="70ae7739-b4b1-49ad-8b64-238968b7c90e" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/activities/PagerActivity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/fragments/PagerFragment.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/boomgallery/app/src/main/res/layout/activity_pager.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/boomgallery/app/src/main/res/layout/fragment_pager.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/LoadImage.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/CustomDrawerAdapter.java" afterPath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/adapters/CustomDrawerAdapter.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/DrawerItem.java" afterPath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/adapters/DrawerItem.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/FullScreen.java" afterPath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/activities/FullScreenActivity.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/GridActivity.java" afterPath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/activities/GridActivity.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/GridFragment.java" afterPath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/fragments/GridFragment.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/ItemImage.java" afterPath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/adapters/ItemImage.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/RecyclerViewAdapter.java" afterPath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/adapters/RecyclerViewAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/boomgallery/.idea/misc.xml" afterPath="$PROJECT_DIR$/boomgallery/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/boomgallery/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/boomgallery/app/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/BoomGallery.java" afterPath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/BoomGallery.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/Consts.java" afterPath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/Consts.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/RecyclerItemClickListener.java" afterPath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/RecyclerItemClickListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/Utils/ImageLoadHelper.java" afterPath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/Utils/ImageLoadHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/utils/GalleryLoader.java" afterPath="$PROJECT_DIR$/boomgallery/app/src/main/java/com/prepod/boomgallery/utils/GalleryLoader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/boomgallery/app/src/main/res/layout/fragment_grid.xml" afterPath="$PROJECT_DIR$/boomgallery/app/src/main/res/layout/fragment_grid.xml" />
+    </list>
     <ignored path="android-boomgallery.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,7 +80,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
@@ -67,15 +89,11 @@
               <option name="myItemId" value="android-boomgallery" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="android-boomgallery" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NonAndroidModuleNode" />
-            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
       <pane id="ProjectPane" />
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">

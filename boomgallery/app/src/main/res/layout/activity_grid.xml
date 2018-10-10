@@ -55,6 +55,7 @@
                     android:layout_width="@dimen/feed_item_profile_pic"
                     android:layout_height="@dimen/feed_item_profile_pic"
                     android:layout_marginLeft="10dp"
+
                     android:scaleType="fitCenter">
                 </com.prepod.boomgallery.AvaView>
 

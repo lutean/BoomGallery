@@ -4,6 +4,8 @@
         <string name="action_refresh">Settings</string>
         <string name="action_new">Settings</string>
         <string name="logo_desc">App logo</string>
+    <string name="activity_pager_share">Передать</string>
+    <string name="activity_pager_delete">Удалить</string>
 
     <integer name="com_vk_sdk_AppId">5529395</integer>
 </resources>
